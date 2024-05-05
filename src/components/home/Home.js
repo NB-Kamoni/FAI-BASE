@@ -38,7 +38,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Link to="/login">
-      <Button primary size='huge'>
+      <Button primary size='huge'style={{ backgroundColor: 'rgba(11, 102, 35)', marginTop: '500' }}>
         Get Started
         <Icon name='right arrow' />
       </Button>
@@ -225,27 +225,26 @@ const Home = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
+              Farm Records at Your Finger Tips
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              Keep a record of your produce making optimization easy and fast.
+              Login to the farm management system to access your records and analytics.
             </p>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
+              Explore The Market & Information Section
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+              Yes that's right, you can buy and sell farm-tools, fertilizers, pesticides, seeds, and even access vet services.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+            <Image bordered rounded size='large' src='https://github.com/NB-Kamoni/Images/blob/main/chicken.jpg?raw=true' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button size='huge'>Check Them Out</Button>
+            <Button size='huge' style={{ color: 'white', backgroundColor: 'rgba(11, 102, 35)' }}>Check Them Out</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -256,17 +255,17 @@ const Home = () => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
+              "The FormFolio FMS"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+            <p style={{ fontSize: '1.33em' }}>A world class Farm Management System (FMS) for every farmer </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
+              "All your farm management needs in one platform."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+              <Image avatar src='https://github.com/NB-Kamoni/Images/blob/main/hen.jpg?raw=true' />
+              <b>John Doe</b> Co-Founder and CEO
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -276,14 +275,12 @@ const Home = () => (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Breaking The Grid, Grabs Your Attention
+        Revolutionizing Agribusiness: Kiambu County Farmers Reap Lucrative Harvests with FarmFolio FMS!
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the
-          art of doing nothing by providing massive amounts of whitespace and generic content that
-          can seem massive, monolithic and worth your attention.
+        In the fields of Kiambu County, Kenya, a silent agricultural revolution is underway, fueled by innovation and propelled by FarmFolio FMS. Through this groundbreaking farming management system, farmers are witnessing a remarkable transformation in their operations, from traditional practices to modern efficiency.
         </p>
-        <Button as='a' size='large'>
+        <Button as='a' size='large' style={{ color: 'white', backgroundColor: 'rgba(11, 102, 35)' }}>
           Read More
         </Button>
 
@@ -297,19 +294,17 @@ const Home = () => (
         </Divider>
 
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
+        Elevating Agriculture: The Rise of Vertical Farms
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+        Vertical farming represents a modern approach to agriculture, addressing the challenges of land scarcity and urbanization while offering sustainable solutions to food production. By stacking crops in vertical layers, often within controlled indoor environments, vertical farms maximize space utilization and minimize water usage compared to traditional farming methods.
         </p>
-        <Button as='a' size='large'>
-          I'm Still Quite Interested
+        <Button as='a' size='large' style={{color: 'white', backgroundColor: 'rgba(11, 102, 35)' }}>
+          Read More
         </Button>
       </Container>
     </Segment>
-
+    //styles footer
     <Segment inverted vertical style={{ 
                                         padding: '5em 0em',
                                         backgroundColor: 'rgba(11, 102, 35)'
@@ -320,31 +315,33 @@ const Home = () => (
             <Grid.Column width={3}>
               <Header inverted as='h4' content='About' />
               <List link inverted>
-                <List.Item as='a'>Sitemap</List.Item>
+                <List.Item as='a'>Research</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
-                <List.Item as='a'>Religious Ceremonies</List.Item>
-                <List.Item as='a'>Gazebo Plans</List.Item>
+                <List.Item as='a'>Help</List.Item>
+                <List.Item as='a'>FAQ</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as='h4' content='Services' />
               <List link inverted>
-                <List.Item as='a'>Banana Pre-Order</List.Item>
-                <List.Item as='a'>DNA FAQ</List.Item>
-                <List.Item as='a'>How To Access</List.Item>
-                <List.Item as='a'>Favorite X-Men</List.Item>
+                <List.Item as='a'>Vet services</List.Item>
+                <List.Item as='a'>Training</List.Item>
+                <List.Item as='a'>Delivery</List.Item>
+                <List.Item as='a'>Consult an expert</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
               <Header as='h4' inverted>
-                Footer Header
+                Access The Farm Management System
               </Header>
               <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
+                Take control of your farming.  Login
+
               </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <p style={{textAlign: 'center', marginTop: 100 }}> © FarmFolio 2024</p>
       </Container>
     </Segment>
   </ResponsiveContainer>
