@@ -7,36 +7,37 @@ const Header = () => {
     const navigate = useNavigate();
     const { userLoggedIn } = useAuth();
 
-    return (
+//     return (
 
 
       
-                <div className='right menu'>
-                    {userLoggedIn ? (
-                        <button
-                            onClick={() => {
-                                doSignOut().then(() => {
-                                    navigate('/login');
-                                });
-                            }}
-                            className='item'
-                        >
-                            Logout
-                        </button>
-                    ) : (
-                        <>
-                             <Button as='a' inverted>
-                      Log in
-                    </Button>
-                            <Link to={'/register'} className='item'>
-                                Register New Account
-                            </Link>
-                        </>
-                    )}
+            //     <div className='right menu'>
+            //         {userLoggedIn ? (
+            //             <button
+            //                 onClick={() => {
+            //                     doSignOut().then(() => {
+            //                         navigate('/login');
+            //                     });
+            //                 }}
+            //                 className='item'
+            //             >
+            //                 Logout
+            //             </button>
+            //         ) : (
+            //             <>
+            //                  <Button as='a' inverted>
+            //           Log in
+            //         </Button>
+            //                 <Link to={'/register'} className='item'>
+            //                     Register New Account
+            //                 </Link>
+            //             </>
+            //         )}
               
-            </div>
+            // </div>
         
-    );
+//     );
+
 };
 
 export default Header;

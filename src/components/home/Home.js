@@ -3,6 +3,7 @@ import { createMedia } from '@artsy/fresnel';
 import PropTypes from 'prop-types';
 import { Button, Container, Divider, Grid, Header, Icon, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { InView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom'; 
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -13,21 +14,22 @@ const { MediaContextProvider, Media } = createMedia({
 });
 
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container text >
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='Welcome to FarmFolio'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em',
+        
       }}
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Take your farm management to the next level.'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -35,10 +37,12 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
-      Get Started
-      <Icon name='right arrow' />
-    </Button>
+    <Link to="/login">
+      <Button primary size='huge'>
+        Get Started
+        <Icon name='right arrow' />
+      </Button>
+    </Link>
   </Container>
 );
 
@@ -61,8 +65,17 @@ class DesktopContainer extends React.Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{
+              minHeight: 700,
+              padding: '1em 0em',
+              backgroundImage: `url('https://github.com/NB-Kamoni/Images/blob/main/ladyfarmergreen.png?raw=true')`, 
+              backgroundSize: 'cover', 
+              backgroundColor: 'rgba(11, 102, 35)', 
+            }}
+           
+            
             vertical
+            
           >
             <Menu
               fixed={fixed ? 'top' : null}
@@ -75,16 +88,20 @@ class DesktopContainer extends React.Component {
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
+                <Menu.Item as='a'>Market</Menu.Item>
+                <Menu.Item as='a'>Information</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
+                  <Link to="/login">
+                    <Button inverted={!fixed}>
+                      Log in
+                    </Button>
+                  </Link>
+                  <Link to="/register">
+                    <Button inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                      Sign Up
+                    </Button>
+                  </Link>
                 </Menu.Item>
               </Container>
             </Menu>
@@ -122,13 +139,20 @@ class MobileContainer extends React.Component {
             inverted
             onHide={this.handleSidebarHide}
             vertical
+            //styles the side menu
+            style={{ maxHeight: 380,
+                     backgroundSize: 'cover', 
+                     backgroundColor: 'rgba(11, 102, 35)', 
+                     maxWidth: 150,
+                    
+            }}
             visible={sidebarOpened}
           >
             <Menu.Item as='a' active>
               Home
             </Menu.Item>
-            <Menu.Item as='a'>Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
+            <Menu.Item as='a'>Market</Menu.Item>
+            <Menu.Item as='a'>Information</Menu.Item>
             <Menu.Item as='a'>Careers</Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
             <Menu.Item as='a'>Sign Up</Menu.Item>
@@ -138,8 +162,16 @@ class MobileContainer extends React.Component {
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 350, padding: '1em 0em' }}
+              //styles the smaller  screen header
+              style={{ minHeight: 350,
+                       padding: '1em 0em',
+                       backgroundImage: `url('https://github.com/NB-Kamoni/Images/blob/main/ladyfarmergreen.png?raw=true')`, 
+                       backgroundSize: 'cover', 
+                       backgroundColor: 'rgba(11, 102, 35)', 
+
+                     }}
               vertical
+
             >
               <Container>
                 <Menu inverted pointing secondary size='large'>
@@ -147,12 +179,16 @@ class MobileContainer extends React.Component {
                     <Icon name='sidebar' />
                   </Menu.Item>
                   <Menu.Item position='right'>
-                    <Button as='a' inverted>
-                      Log in
-                    </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                      Sign Up
-                    </Button>
+                    <Link to="/login">
+                      <Button as='a' inverted>
+                        Log in
+                      </Button>
+                    </Link>
+                    <Link to="/register">
+                      <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
+                        Sign Up
+                      </Button>
+                    </Link>
                   </Menu.Item>
                 </Menu>
               </Container>
@@ -274,7 +310,10 @@ const Home = () => (
       </Container>
     </Segment>
 
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+    <Segment inverted vertical style={{ 
+                                        padding: '5em 0em',
+                                        backgroundColor: 'rgba(11, 102, 35)'
+                                      }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>

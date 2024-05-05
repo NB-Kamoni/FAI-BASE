@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<HomeLoggedin />} />
+          <Route path="/homeLoggedin" element={<HomeLoggedin />} />
         </Routes>
       </Router>
     </AuthProvider>
