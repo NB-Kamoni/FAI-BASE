@@ -38,7 +38,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Link to="/login">
-      <Button primary size='huge'style={{ backgroundColor: 'rgba(11, 102, 35)', marginTop: '500' }}>
+      <Button primary size='huge'style={{ backgroundColor: 'transparent', marginTop: '50px', border: '4px solid white' }}>
         Get Started
         <Icon name='right arrow' />
       </Button>
@@ -92,13 +92,14 @@ class DesktopContainer extends React.Component {
                 <Menu.Item as='a'>Information</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item>
                 <Menu.Item position='right'>
+                  {/* navbar */}
                   <Link to="/login">
-                    <Button inverted={!fixed}>
-                      Log in
+                    <Button inverted={!fixed} >
+                      Log In
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                    <Button inverted={!fixed} primary={fixed} style={{  marginLeft: '0.5em' }}>
                       Sign Up
                     </Button>
                   </Link>
@@ -181,7 +182,7 @@ class MobileContainer extends React.Component {
                   <Menu.Item position='right'>
                     <Link to="/login">
                       <Button as='a' inverted>
-                        Log in
+                        Log
                       </Button>
                     </Link>
                     <Link to="/register">
@@ -304,7 +305,7 @@ const Home = () => (
         </Button>
       </Container>
     </Segment>
-    //styles footer
+   
     <Segment inverted vertical style={{ 
                                         padding: '5em 0em',
                                         backgroundColor: 'rgba(11, 102, 35)'
