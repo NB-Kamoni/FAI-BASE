@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMedia } from '@artsy/fresnel';
 import PropTypes from 'prop-types';
-import { Button, Container, Divider, Grid, Header, Icon, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Button, Container, Divider, Grid, Icon, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { InView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom'; 
 
@@ -13,9 +13,9 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
-const HomepageHeading = ({ mobile }) => (
+const Homepagediv = ({ mobile }) => (
   <Container text >
-    <Header
+    <div
       as='h1'
       content='Welcome to FarmFolio'
       inverted
@@ -27,7 +27,7 @@ const HomepageHeading = ({ mobile }) => (
         
       }}
     />
-    <Header
+    <div
       as='h2'
       content='Take your farm management to the next level.'
       inverted
@@ -46,7 +46,7 @@ const HomepageHeading = ({ mobile }) => (
   </Container>
 );
 
-HomepageHeading.propTypes = {
+Homepagediv.propTypes = {
   mobile: PropTypes.bool,
 };
 
@@ -75,38 +75,9 @@ class DesktopContainer extends React.Component {
            
             
             vertical
-            
           >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>Market</Menu.Item>
-                <Menu.Item as='a'>Information</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
-                <Menu.Item position='right'>
-                  {/* navbar */}
-                  <Link to="/login">
-                    <Button inverted={!fixed} >
-                      Log In
-                    </Button>
-                  </Link>
-                  <Link to="/register">
-                    <Button inverted={!fixed} primary={fixed} style={{  marginLeft: '0.5em' }}>
-                      Sign Up
-                    </Button>
-                  </Link>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <HomepageHeading />
+           
+            <Homepagediv />
           </Segment>
         </InView>
 
@@ -182,7 +153,7 @@ class MobileContainer extends React.Component {
                   <Menu.Item position='right'>
                     <Link to="/login">
                       <Button as='a' inverted>
-                        Log
+                        Log In
                       </Button>
                     </Link>
                     <Link to="/register">
@@ -193,7 +164,7 @@ class MobileContainer extends React.Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <HomepageHeading mobile />
+              <Homepagediv mobile />
             </Segment>
 
             {children}
@@ -225,16 +196,16 @@ const Home = () => (
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <div as='h3' style={{ fontSize: '2em' }}>
               Farm Records at Your Finger Tips
-            </Header>
+            </div>
             <p style={{ fontSize: '1.33em' }}>
               Keep a record of your produce making optimization easy and fast.
               Login to the farm management system to access your records and analytics.
             </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <div as='h3' style={{ fontSize: '2em' }}>
               Explore The Market & Information Section
-            </Header>
+            </div>
             <p style={{ fontSize: '1.33em' }}>
               Yes that's right, you can buy and sell farm-tools, fertilizers, pesticides, seeds, and even access vet services.
             </p>
@@ -255,15 +226,15 @@ const Home = () => (
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <div as='h3' style={{ fontSize: '2em' }}>
               "The FormFolio FMS"
-            </Header>
+            </div>
             <p style={{ fontSize: '1.33em' }}>A world class Farm Management System (FMS) for every farmer </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <div as='h3' style={{ fontSize: '2em' }}>
               "All your farm management needs in one platform."
-            </Header>
+            </div>
             <p style={{ fontSize: '1.33em' }}>
               <Image avatar src='https://github.com/NB-Kamoni/Images/blob/main/hen.jpg?raw=true' />
               <b>John Doe</b> Co-Founder and CEO
@@ -275,9 +246,9 @@ const Home = () => (
 
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
-        <Header as='h3' style={{ fontSize: '2em' }}>
+        <div as='h3' style={{ fontSize: '2em' }}>
         Revolutionizing Agribusiness: Kiambu County Farmers Reap Lucrative Harvests with FarmFolio FMS!
-        </Header>
+        </div>
         <p style={{ fontSize: '1.33em' }}>
         In the fields of Kiambu County, Kenya, a silent agricultural revolution is underway, fueled by innovation and propelled by FarmFolio FMS. Through this groundbreaking farming management system, farmers are witnessing a remarkable transformation in their operations, from traditional practices to modern efficiency.
         </p>
@@ -294,9 +265,9 @@ const Home = () => (
           <a href='#'>Case Studies</a>
         </Divider>
 
-        <Header as='h3' style={{ fontSize: '2em' }}>
+        <div as='h3' style={{ fontSize: '2em' }}>
         Elevating Agriculture: The Rise of Vertical Farms
-        </Header>
+        </div>
         <p style={{ fontSize: '1.33em' }}>
         Vertical farming represents a modern approach to agriculture, addressing the challenges of land scarcity and urbanization while offering sustainable solutions to food production. By stacking crops in vertical layers, often within controlled indoor environments, vertical farms maximize space utilization and minimize water usage compared to traditional farming methods.
         </p>
@@ -314,7 +285,7 @@ const Home = () => (
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
+              <div inverted as='h4' content='About' />
               <List link inverted>
                 <List.Item as='a'>Research</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
@@ -323,7 +294,7 @@ const Home = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
+              <div inverted as='h4' content='Services' />
               <List link inverted>
                 <List.Item as='a'>Vet services</List.Item>
                 <List.Item as='a'>Training</List.Item>
@@ -332,9 +303,9 @@ const Home = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted>
+              <div as='h4' inverted>
                 Access The Farm Management System
-              </Header>
+              </div>
               <p>
                 Take control of your farming.  Login
 

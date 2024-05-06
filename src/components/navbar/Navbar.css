@@ -1,0 +1,16 @@
+/* General styles for the navigation bar */
+.navbar {
+  background-color: transparent; /* Transparent for floating effect */
+  padding: 16px; /* Padding around the navbar */
+  display: flex; /* Flex layout for alignment */
+  justify-content: space-between; /* Space between left and right sections */
+  align-items: center; /* Vertical alignment */
+  position: fixed; /* Fixed position for floating navbar */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left edge */
+  right: 0; /* Extend to the right edge */
+  z-index: 1000; /* High z-index to keep it above other elements */
+}
+
+
+
