@@ -14,10 +14,12 @@ const Navbar = () => {
   return (
     <Menu secondary className="navbar">
       {/* Main navigation links on the left */}
-      <Menu.Item as={Link} to="/" content="Home" />
-      <Menu.Item as={Link} to="/market" content="Market" />
-      <Menu.Item as={Link} to="/information" content="Information" />
-      <Menu.Item as={Link} to="/careers" content="Careers" />
+      
+      <Menu.Item> <Link className='text' to={'/'}>Home</Link></Menu.Item>
+      <Menu.Item> <Link className='text' to={'/market'}>Market</Link></Menu.Item>
+      <Menu.Item> <Link className='text' to={'/information'}>Information</Link></Menu.Item>
+      <Menu.Item> <Link className='text' to={'/careers'}>Careers</Link></Menu.Item>
+     
 
       {/* Align buttons to the right */}
       <Menu.Menu position="right">

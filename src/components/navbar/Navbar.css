@@ -10,42 +10,9 @@
   left: 0; /* Align to the left edge */
   right: 0; /* Extend to the right edge */
   z-index: 1000; /* High z-index to keep it above other elements */
+  
 }
 
-/* Styling for the navigation links on the left */
-.navbar .menu.Item {
-  color: white; /* White text for navigation links */
-  font-size: 1.125rem; /* Slightly larger font size */
-  font-weight: 600; /* Bold font */
-}
+Link {
 
-.navbar .menu.Item .Link {
-  text-decoration: none; /* Remove underline on links */
-  color: white; /* Inherit color from parent */
-  padding: 0 16px; /* Add padding for spacing */
-}
-
-.navbar .menu-item a:hover {
-  color: rgba(60, 150, 60, 1); /* Light green hover effect */
-}
-
-
-
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Vertical layout for smaller screens */
-    align-items: flex-start; /* Align items to the left */
-    padding: 8px 16px; /* Adjust padding for smaller screens */
-  }
-
-  .navbar .menu-item {
-    margin-bottom: 16px; /* Space between links when vertical */
-  }
-
-  .navbar .menu-right {
-    width: 100%; /* Full width for buttons */
-    justify-content: flex-start; /* Align buttons to the left */
-  }
 }
