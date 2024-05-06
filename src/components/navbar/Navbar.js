@@ -5,6 +5,8 @@ import { doSignOut } from '../../firebase/auth';
 import { Button, Menu } from 'semantic-ui-react';
 import './Navbar.css';
 
+
+
 const Navbar = () => {
   const navigate = useNavigate();
   const { userLoggedIn } = useAuth();
