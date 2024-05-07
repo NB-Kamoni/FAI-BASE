@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/authContext/AuthContext';
 import { doSignOut } from '../../firebase/auth';
-import { Button, Menu } from 'semantic-ui-react';
+import { Button, Menu, Image } from 'semantic-ui-react';
 import './Navbar.css'; /* Custom CSS file for additional styling */
 
 const Navbar = () => {
@@ -35,8 +35,15 @@ const Navbar = () => {
   
   };
 
+  const logoUrl = 'https://github.com/NB-Kamoni/Images/blob/main/FarmFolioLogo.png?raw=true';
+
   return (
     <Menu secondary style={navbarStyle}>
+
+       {/* Logo as the first item, linking to the home page */}
+      <Menu.Item as={Link} to="/" className="custom-image">
+          <Image src={logoUrl} alt="Company Logo" size="small"  />
+      </Menu.Item>
       <Menu.Item className='custom-menuitem' as={Link} to="/">Home</Menu.Item>
       <Menu.Item className='custom-menuitem'  as={Link} to="/market">Market</Menu.Item>
       <Menu.Item className='custom-menuitem'  as={Link} to="/hodari">Ask Hodari</Menu.Item>
