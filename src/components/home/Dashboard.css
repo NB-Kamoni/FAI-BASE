@@ -1,0 +1,19 @@
+.dashboard {
+    display: flex;
+    background-color: rgba(11, 102, 35); /* Green Background */
+   
+}
+
+
+
+.content-card {
+    flex: 1; /* Fill remaining space */
+    background-color: white; /* Example background color */
+ 
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    margin-left: 200px;
+    min-height: 1000px;
+}

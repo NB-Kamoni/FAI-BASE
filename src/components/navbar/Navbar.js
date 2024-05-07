@@ -44,8 +44,7 @@ const Navbar = () => {
 
       {userLoggedIn && (
         <Menu.Menu position="right">
-          <Menu.Item className='custom-menuitem'  as={Link} to="/notebooks">Notebooks</Menu.Item>
-          <Menu.Item className='custom-menuitem'  as={Link} to="/analytics">Analytics</Menu.Item>
+          <Menu.Item className='custom-menuitem'  as={Link} to="/dashboard">Dashboard</Menu.Item>
           <Menu.Item className='custom-menuitem'  as={Link} to="/account">My Account</Menu.Item>
           <Menu.Item>
             <Button

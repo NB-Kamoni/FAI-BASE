@@ -4,7 +4,7 @@ import Register from "./components/auth/register/Register";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import { AuthProvider } from "./contexts/authContext/AuthContext";
-import HomeLoggedin from "./components/home/HomeLoggedin";
+import Dashboard from "./components/home/Dashboard";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/homeLoggedin" element={<HomeLoggedin />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </AuthProvider>
