@@ -32,7 +32,7 @@ const TypingEffect = ({ texts = [], speed = 100, pause = 1000 }) => {
     };
   }, [currentIndex, texts, currentSentence, typing, pause, speed]); // Correct dependencies
 
-  return <h1>{displayedText}</h1>; // Display the typing effect
+  return <span style={{}}><h1>{displayedText}</h1></span>; // Display the typing effect
 };
 
 TypingEffect.propTypes = {
