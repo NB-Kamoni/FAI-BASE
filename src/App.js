@@ -5,6 +5,10 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import { AuthProvider } from "./contexts/authContext/AuthContext";
 import Dashboard from "./components/home/Dashboard";
+import Services from "./components/services/Services";
+import Notebooks from "./components/notebooks/Notebooks";
+import Market from "./components/market/Market";
+
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/notebooks" element={<Notebooks />} />
+          <Route path="/market" element={<Market />} />
+
         </Routes>
       </Router>
     </AuthProvider>

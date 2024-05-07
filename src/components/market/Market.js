@@ -1,7 +1,6 @@
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar';
-import WelcomeMessage from './WelcomeMessage';
-import './Dashboard.css';
+import './Market.css';
 
 
 
@@ -11,7 +10,7 @@ const Dashboard = () => {
             <Sidebar />
                 <div className="content-card">
                     {/* Content Goes Here */}
-                    <WelcomeMessage />
+                  <h1>Joy</h1>
                 </div>
             </div>
        
