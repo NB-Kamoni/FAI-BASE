@@ -58,7 +58,7 @@ const Navbar = () => {
               basic
               inverted
               onClick={() => {
-                doSignOut().then(() => navigate('/login'));
+                doSignOut().then(() => navigate('/home'));
               }}
             >
               Logout
