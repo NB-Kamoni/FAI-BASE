@@ -10,7 +10,7 @@ const Dashboard = () => {
             <Sidebar />
                 <div className="content-card">
                     {/* Content Goes Here */}
-                  <h1>Margaret</h1>
+                  <h1>Working on it...</h1>
                 </div>
             </div>
        
