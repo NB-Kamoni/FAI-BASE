@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Button, Container, Divider, Grid, Icon, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { InView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom'; 
+import TypingEffect from '../TypingEffect';
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -37,12 +38,20 @@ const Homepagediv = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Link to="/login">
+    <div>
+    <TypingEffect
+      texts={["Welcome to FarmFolio", "Take Your Farm Management To The Next Level!", "Keep Track Of Your Farm Analytics",  "Optimize Your Farm For High Yields",]}
+      speed={150} // Speed in milliseconds
+      pause={1000} // Pause for 1 second after typing
+      
+    />
+  </div>
+    {/* <Link to="/login">
       <Button primary size='huge'style={{ backgroundColor: 'transparent', marginTop: '50px', border: '4px solid white' }}>
         Get Started
         <Icon name='right arrow' />
       </Button>
-    </Link>
+    </Link> */}
   </Container>
 );
 
@@ -120,14 +129,7 @@ class MobileContainer extends React.Component {
             }}
             visible={sidebarOpened}
           >
-            <Menu.Item as='a' active>
-              Home
-            </Menu.Item>
-            <Menu.Item as='a'>Market</Menu.Item>
-            <Menu.Item as='a'>Information</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -146,23 +148,7 @@ class MobileContainer extends React.Component {
 
             >
               <Container>
-                <Menu inverted pointing secondary size='large'>
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name='sidebar' />
-                  </Menu.Item>
-                  <Menu.Item position='right'>
-                    <Link to="/login">
-                      <Button as='a' inverted>
-                        Log In
-                      </Button>
-                    </Link>
-                    <Link to="/register">
-                      <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                        Sign Up
-                      </Button>
-                    </Link>
-                  </Menu.Item>
-                </Menu>
+                
               </Container>
               <Homepagediv mobile />
             </Segment>

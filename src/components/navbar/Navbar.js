@@ -13,12 +13,12 @@ const Navbar = () => {
   // Detect scrolling
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0); // Change state when scrolling starts
+      setIsScrolled(window.scrollY > 100);
     };
 
-    window.addEventListener('scroll', handleScroll); // Add scroll listener
+    window.addEventListener('scroll', handleScroll); 
     return () => {
-      window.removeEventListener('scroll', handleScroll); // Clean up the listener
+      window.removeEventListener('scroll', handleScroll); 
     };
   }, []);
 
@@ -31,7 +31,7 @@ const Navbar = () => {
     left: 0, 
     right: 0, 
     zIndex: 1000,
-    transition: 'background-color 0.5s', 
+    transition: 'background-color 2s', 
   
   };
 
