@@ -1,5 +1,6 @@
 import React from "react";
 import ProductItem from "./ProductItem";
+import './ProductContainer.css';
 
 function ProductContainer({products}) {
   const ProductItems= products.map((product)=>(

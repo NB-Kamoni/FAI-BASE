@@ -8,6 +8,7 @@ import Cart from './Cart';
 import AddProductForm from "./ProductForm";
 import ProductContainer from "./ProductContainer";
 import Header from "./Header";
+import './AddProductForm.css'
 
 const Dashboard = () => {
     const [products, setProducts] = useState([]);

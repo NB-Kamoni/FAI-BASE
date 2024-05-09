@@ -1,0 +1,10 @@
+
+#market-header {
+    background-color: #368004c7; /* A vibrant blue background */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    text-align: center; /* Center align the text */
+    font-size: 24px; /* Larger font size for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for some depth */
+    margin-bottom: 20px; /* Margin at the bottom of the header */
+}
