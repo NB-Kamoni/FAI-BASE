@@ -24,26 +24,26 @@ const Dashboard = () => {
 
                     // the function to delete a cow
                     async function deleteCow(id) {
-                        try {
-                            const response = await fetch('/api/cows/${id}', {method: 'DELETE'});
-                            if (response.ok) {
-                                // to reload the cow data after deletion
-                                const updatedCowsData = await fetchData();
-                                renderCows(updatedCowsData);
-                            } else {
-                                console.error('Failed to delete cow');
-                            }
-                          } catch (error) {
-                            console.error('Error deleting cow:', error);
-                          }
+                      try {
+                        const response = await fetch('/api/cows/${id}', {method: 'DELETE'});
+                        if (response.ok) {
+                            // to reload the cow data after deletion
+                            const updatedCowsData = await fetchData();
+                            renderCows(updatedCowsData);
+                        } else {
+                            console.error('Failed to delete cow');
                         }
+                      } catch (error) {
+                      console.error('Error deleting cow:', error);
+                    }
+                   }
                         
-                        // The function to add a cow
-                        async function addCow(newCowData) {
-                          try {
-                            const response = await fetch('/api/cows/${id}', {method: 'POST', headers: {
-                              'Content-Type':'application/json'
-                             },
+                    // The function to add a cow
+                    async function addCow(newCowData) {
+                      try {
+                      const response = await fetch('/api/cows/${id}', {method: 'POST', headers: {
+                     'Content-Type':'application/json'
+                      },
                              body: JSON.stringify(newCowData)
                             });
                             if (response.ok) {
