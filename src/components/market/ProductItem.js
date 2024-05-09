@@ -1,26 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 
-function ProductItem({ onAddToCart }) {
-    const { id } = useParams(); // Get product ID from URL parameters
-    const [product, setProduct] = useState(null);
-
-    useEffect(() => {
-        console.log(`Fetching product with ID: ${id}`);
-        axios.get(`http://localhost:3000/products/${id}`)
-            .then(response => {
-                console.log('Product fetched:', response.data);
-                setProduct(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching product details:', error);
-            });
-    }, [id]);
-
+function ProductItem({ product, onAddToCart }) {
     if (!product) {
-        console.log('Product is not loaded yet');
-        return <div>Loading...</div>;
+        return <div>Loading...</div>; // Or handle this scenario appropriately
     }
 
     return (
