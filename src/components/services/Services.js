@@ -17,7 +17,7 @@ const Dashboard = () => {
     }, []);
 
     const fetchVeterinaries = () => {
-        fetch('http://localhost:4000/veterinarians')
+        fetch('https://farmfolio-backend.onrender.com/veterinarians')
             .then(response => response.json())
             .then(data => {
                 setVeterinaries(data);
