@@ -24,7 +24,7 @@ function AddProductForm({ onAddProduct }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmitting(true); // Set submitting state to true to prevent multiple submits
-    axios.post("http://localhost:3000/products", newProduct)
+    axios.post("https://farmfolio-backend.onrender.com/products", newProduct)
       .then((response) => {
         console.log(response.data);
         onAddProduct(response.data); // Optionally, you can call this to update parent component

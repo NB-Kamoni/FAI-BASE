@@ -17,7 +17,7 @@ const Dashboard = () => {
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/products')
+        axios.get('https://farmfolio-backend.onrender.com/products')
             .then(response => { setProducts(response.data.map(product => ({ ...product, qty: 1 }))); })
             .catch(error => { console.error('Error fetching products:', error); });
     }, []);
@@ -71,7 +71,7 @@ const Dashboard = () => {
                
                {/* <ProductContainer products={filteredProducts} /> */}
                
-                <Cart cartItems={cartItems} onRemoveFromCart={removeFromCart} />
+              
                 <div className="products-grid">
                 {filteredProducts.map(product => (
                     <div key={product.id }className="product-item">
@@ -88,6 +88,7 @@ const Dashboard = () => {
                     </div>
                 ))}
                 </div>
+                <Cart cartItems={cartItems} onRemoveFromCart={removeFromCart} />
             </div>
         </div>
     );
