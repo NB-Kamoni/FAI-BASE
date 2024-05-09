@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <div id="market-header">
-      <p>Karibu Sokoni!</p>
+      <p>Karibu Soko!</p>
     </div>
   );
 }

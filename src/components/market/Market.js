@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from "./SearchBar";
 import Cart from './Cart';
 import AddProductForm from "./ProductForm";
-import ProductContainer from "./ProductContainer";
+// import ProductContainer from "./ProductContainer";
 import Header from "./Header";
 import './AddProductForm.css'
 
@@ -65,11 +65,16 @@ const Dashboard = () => {
                 <div className="buttonContainer">
                     <button onClick={handleClick}>{showForm ? 'Close Form' : 'Add a Product'}</button>
                 </div>
+                
                 <SearchBar onSearch={handleSearch} />
-                <ProductContainer products={filteredProducts} />
+                
+               
+               {/* <ProductContainer products={filteredProducts} /> */}
+               
                 <Cart cartItems={cartItems} onRemoveFromCart={removeFromCart} />
+                <div className="products-grid">
                 {filteredProducts.map(product => (
-                    <div key={product.id}>
+                    <div key={product.id }className="product-item">
                         <Link to={`/product/${product.id}`}>
                             <h3>{product.name}</h3>
                         </Link>
@@ -82,6 +87,7 @@ const Dashboard = () => {
                         <button onClick={() => addToCart(product)}>Add to Cart</button>
                     </div>
                 ))}
+                </div>
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ function ProductItem({ product, onAddToCart }) {
     }
 
     return (
-        <div>
+        <div id="product-item">
             <h2>{product.name}</h2>
             {product.imageUrl && <img src={product.imageUrl} alt={product.name} style={{ width: "300px" }} />}
             <p>{product.description}</p>
