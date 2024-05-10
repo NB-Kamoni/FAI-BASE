@@ -79,12 +79,12 @@ const Dashboard = () => {
                             <h3>{product.name}</h3>
                         </Link>
                         {product.imageUrl && (
-                            <img src={product.imageUrl} alt={product.name} style={{ width: "100px", height: "100px" }} />
+                            <img src={product.imageUrl} alt={product.name} style={{ width: "250px", height: "200px" }} />
                         )}
                         <p>{product.description}</p>
                         <p>{`Ksh${product.price}`}</p>
                         <p>Location: {product.location}</p>
-                        <button onClick={() => addToCart(product)}>Add to Cart</button>
+                        <button onClick={() => addToCart(product)}className='cart-checkout-btn'>Add to Cart</button>
                     </div>
                 ))}
                 </div>

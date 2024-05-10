@@ -1,0 +1,74 @@
+.cartContainer {
+    padding: 20px;
+    margin-top: 20px; /* Adequate spacing from the top for visibility */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Creates visual separation between the header and the items */
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 20px; /* Ensures space below the list for totals or additional content */
+    text-align: center;
+}
+
+.cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between; /* Keeps items spaced and aligned properly */
+    align-items: center;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Removes border from the last item for cleaner look */
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px; /* Adds space above the total for better separation */
+    text-align: center;
+}
+
+.cart-checkout-btn {
+    background-color: rgba(11, 102, 35, 1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px; /* Added margin-top for spacing from total to button */
+    transition: background-color 0.3s;
+}
+
+.cart-checkout-btn:hover {
+    background-color: #19cc12;
+}
+
+.cart-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;  /* Specific width for image container */
+    height: 80px; /* Specific height for image container */
+    margin: 5px auto; /* Centering the image container and adding small margin */
+    padding: 8px; 
+    border-radius: 8px; 
+}
+
+.cart-image img {
+    width: 100%; /* Makes the image fill the container */
+    height: auto;
+    border-radius: 8px; 
+}

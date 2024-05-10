@@ -1,5 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
+import './Cart.css';
 
 function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
     const getTotalSum = () => {
@@ -16,9 +17,15 @@ function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
     };
 
     return (
-        <div>
-            <h2>Shopping Cart</h2>
-            {cartItems.length === 0 && <div>Add to Cart</div>}
+        <div className="cartContainer">
+            <h2 className='cart-header'>Shopping Cart</h2>
+            <div className='cart-image'>
+            <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYnMQenZZXf-rv-lgFPddJ-XYqoOHVwCqcs_CrC8KeQw&s"
+        alt="cartimage"
+      />
+      </div>
+            {cartItems.length === 0 && <div className='cart-items'>Add to Cart</div>}
             {cartItems.map((item) => (
                 <CartItem
                     key={item.id}
@@ -27,7 +34,7 @@ function Cart({ cartItems, onAddToCart, onRemoveFromCart }) {
                     onRemove={() => handleRemove(item)}
                 />
             ))}
-            <div>Total: Ksh{getTotalSum()}</div>
+            <div className='cart-total'> Total: Ksh{getTotalSum()}</div>
         </div>
     );
 }
