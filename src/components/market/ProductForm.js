@@ -39,12 +39,14 @@ function AddProductForm({ onAddProduct }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form-container'>
+      <div className='form-input'>
       <input type="text" name="name" placeholder="Name" value={newProduct.name} onChange={handleChange} required />
       <input type="text" name="imageUrl" placeholder="Image URL" value={newProduct.imageUrl} onChange={handleChange} required />
       <textarea name="description" placeholder="Description" value={newProduct.description} onChange={handleChange} required />
       <input type="number" name="price" placeholder="Price" value={newProduct.price} onChange={handleChange} required />
       <input type="text" name="location" placeholder="Location" value={newProduct.location} onChange={handleChange} required />
+      </div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <button type="submit" disabled={isSubmitting}>Add Product</button>
     </form>
