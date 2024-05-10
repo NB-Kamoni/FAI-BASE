@@ -1,38 +1,52 @@
-/* AddProductForm.css */
 .form-container {
-    max-width: 600px;
-    margin: auto;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 20px;
-    background: #f4f4f4;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-input,
-.form-textarea,
-.form-button {
+.form-input input,
+.form-input textarea {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    margin-bottom: 10px; /* Adds space between each input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Ensures text is easily readable */
 }
 
-.form-button {
-    background-color: #5c67f2;
+.form-input input:focus,
+.form-input textarea:focus {
+    border-color: #007BFF; /* Highlights the border when an input is focused */
+    box-shadow: 0 0 8px rgba(0,123,255,.2); /* Adds a light blue glow */
+}
+
+.form-input textarea {
+    height: 100px;
+    resize: none; /* Prevents resizing of the textarea */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
     color: white;
+    background-color: rgba(11, 102, 35, 1);
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.form-button:hover {
-    background-color: #4a54e1;
+button:hover {
+    background-color: #19cc12; /* Darker blue on hover for better interaction */
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: -5px;
-    margin-bottom: 10px;
+button:disabled {
+    background-color: #ccc; /* Grey out the button when disabled */
+    cursor: not-allowed; /* Show not-allowed cursor on hover when disabled */
 }
+
+
