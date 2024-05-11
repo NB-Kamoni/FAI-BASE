@@ -43,8 +43,8 @@ function ChickensList() {
   // Function to delete a chicken by ID
   const handleDeleteChicken = async (id) => {
     try {
-      const response = await fetch('https://farmfolio-backend.onrender.com/chickens/${id}', {
-        method: 'DELETE',
+        const response = await fetch(`https://farmfolio-backend.onrender.com/chickens/${id}`, {
+          method: "DELETE",
       });
       if (!response.ok) {
         throw new Error('Failed to delete chicken');
