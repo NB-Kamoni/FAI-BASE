@@ -1,0 +1,12 @@
+.green-stripes tbody tr:nth-child(even) {
+    background-color: rgba(11, 102, 35, 0.1)!important;
+  }
+  
+  .green-stripes tbody tr:nth-child(odd) {
+    background-color: White !important;
+  }
+  
+  .green-stripes thead th {
+      background-color: rgba(11, 102, 35) !important;;
+      color: white !important;; /* Set font color to white */
+    }
