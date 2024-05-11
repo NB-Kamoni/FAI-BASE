@@ -21,7 +21,7 @@ const Notebooks = ({ addNotebook }) => {
                     navigateTo="/cows"
                 />
                 <NotebookCards
-                    image="https://github.com/NB-Kamoni/Images/blob/main/chickens.jpg?raw=true"
+                    image="https://2.bp.blogspot.com/-2F9NWCW0bWI/UFF2rMtT73I/AAAAAAAAQLc/yLlmH82olxk/s1600/Chicken3.jpg"
                     title="Chickens"
                     navigateTo="/chickens"
                 />

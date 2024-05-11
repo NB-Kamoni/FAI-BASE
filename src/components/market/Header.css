@@ -1,10 +1,25 @@
-
 #market-header {
-    background-color: rgba(11, 102, 35, 1); /* A vibrant blue background */
+    background-color: rgba(11, 102, 35, 1); /* A vibrant green background */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding around the text */
     text-align: center; /* Center align the text */
     font-size: 24px; /* Larger font size for the header */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for some depth */
     margin-bottom: 20px; /* Margin at the bottom of the header */
+    
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts the number of columns based on available space */
+    gap: 10px; /* Space between images */
+    padding: 0; /* Padding around the image container */
+    justify-items: center; /* Center-aligns items within their grid cells */
+    align-items: start; 
+}
+
+.image-container img {
+    width: 100%; /* Full width of their container */
+    height: 80%; /* Keeps the aspect ratio of the image */
+    border-radius: 8px; /* Optional: rounds the corners of the images */
 }

@@ -4,17 +4,17 @@ import Sidebar from '../sidebar/Sidebar';
 
 
 
-const Cows = () => {
+const Analytics = () => {
     return (
         <div className="dashboard">
             <Sidebar />
                 <div className="content-card">
                     {/* Content Goes Here */}
-                  <h1>Shem</h1>
+                  <h1>Coming Soon</h1>
                 </div>
             </div>
        
     );
 };
 
-export default Cows;
+export default Analytics;
