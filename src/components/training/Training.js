@@ -4,7 +4,7 @@ import Sidebar from '../sidebar/Sidebar';
 
 
 
-const Analytics = () => {
+const Training = () => {
     return (
         <div className="dashboard">
             <Sidebar />
@@ -17,4 +17,4 @@ const Analytics = () => {
     );
 };
 
-export default Analytics;
+export default Training;

@@ -1,17 +1,20 @@
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar';
-import CowsList from './CowsList'; // Component that displays a list of cows
 
 
-const Cowsbook = () => {
+
+
+const Analytics = () => {
     return (
         <div className="dashboard">
-            <Sidebar /> {/* Sidebar component */}
-            <div className="content-card">
-                <CowsList /> {/* List of cows */}
+            <Sidebar />
+                <div className="content-card">
+                    {/* Content Goes Here */}
+                  <h1>Coming Soon</h1>
+                </div>
             </div>
-        </div>
+       
     );
 };
 
-export default Cowsbook;
+export default Analytics;

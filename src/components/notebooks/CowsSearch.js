@@ -1,18 +1,20 @@
-import React from "react";
+import React from 'react';
+import Sidebar from '../sidebar/Sidebar';
 
 
-function CowsSearch({ searchTerm, onSearchChange }) {
-  return (
-    <div className="ui large fluid icon input">
-      <input
-        type="text"
-        placeholder="Search cows..."
-        value={searchTerm} // Current search term
-        onChange={onSearchChange} // Function to handle input change
-      />
-      <i className="circular search link icon"></i> {/* Icon for the search input */}
-    </div>
-  );
-}
 
-export default CowsSearch;
+
+const Analytics = () => {
+    return (
+        <div className="dashboard">
+            <Sidebar />
+                <div className="content-card">
+                    {/* Content Goes Here */}
+                  <h1>Coming Soon</h1>
+                </div>
+            </div>
+       
+    );
+};
+
+export default Analytics;

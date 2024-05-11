@@ -8,8 +8,15 @@ import Dashboard from "./components/home/Dashboard";
 import Services from "./components/services/Services";
 import Notebooks from "./components/notebooks/Notebooks";
 import Market from "./components/market/Market";
-import Chickensbook from "./components/notebooks/Chickensbook.js"
+import Chickensbook from "./components/notebooks/Chickensbook"
 import Cowsbook from "./components/notebooks/Cowsbook"
+import Analytics from "./components/analytics/Analytics"
+import Hodari from "./components/hodari/Hodari"
+import Inventory from "./components/inventory/Inventory"
+import Training from "./components/training/Training"
+import Help from "./components/help/Help"
+import Account from "./components/account/Account";
+
 
 
 function App() {
@@ -29,6 +36,12 @@ function App() {
           <Route path="/chickens" element={<Chickensbook />} />
           <Route path="/cows" element={<Cowsbook />} />
           <Route path="/market" element={<Market />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/hodari" element={<Hodari />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/account" element={<Account />} />
 
         </Routes>
       </Router>
