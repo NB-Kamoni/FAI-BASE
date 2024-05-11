@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import BookingDetails from './BookingDetails';
 
 const Bookings = ({ veterinarians, onSelectBooking }) => {
     const [showCalendar, setShowCalendar] = useState(false);
@@ -8,20 +7,28 @@ const Bookings = ({ veterinarians, onSelectBooking }) => {
     const [selectedTime, setSelectedTime] = useState('');
     const [selectedVeterinarian, setSelectedVeterinarian] = useState(null);
     const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [isBookingSuccessful, setIsBookingSuccessful] = useState(false);
-    const [timeSlots, setTimeSlots] = useState([]);
+    const [bookedEvents, setBookedEvents] = useState([]); // Hold booked events
 
-    useEffect(() => {
-        // Fetch veterinarian availability
-        fetch('http://localhost:4000/veterinarians')
-            .then(response => response.json())
-            .then(data => {
-                // Extract time slots
-                const availability = data.map(vet => Object.values(vet.availability)).flat();
-                setTimeSlots(availability);
-            })
-            .catch(error => console.error('Error fetching time slots:', error));
-    }, []);
+    const generateTimeSlots = () => {
+        const timeSlots = [];
+        const startTime = 7; //bookings start at 7
+        const endTime = 17; //last booking hour during the day
+        const interval = 30; // Time interval in minutes (30 minutes)
+        
+        for (let hour = startTime; hour <= endTime; hour++) {
+            for (let minute = 0; minute < 60; minute += interval) {
+                const time = new Date();
+                time.setHours(hour);
+                time.setMinutes(minute);
+                timeSlots.push(time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+            }
+        }
+        return timeSlots;
+    };
+
+    const timeSlots = generateTimeSlots();
 
     const handleShowCalendar = () => {
         setShowCalendar(true);
@@ -42,21 +49,26 @@ const Bookings = ({ veterinarians, onSelectBooking }) => {
     const handleNameChange = e => {
         setName(e.target.value);
     };
+    const handlePhoneNumberChange = e => {
+        setPhoneNumber(e.target.value);
+    };
 
     const handleSubmit = e => {
         e.preventDefault();
         // Check if all necessary information is provided
-        if (selectedTime && name && selectedVeterinarian) {
+        if (selectedTime && name && selectedVeterinarian && selectedDate) {
             // Format booking data
             const bookingData = {
-                date: selectedDate, // Include selected date
+                date: selectedDate,
                 time: selectedTime,
                 name: name,
+                phoneNumber: phoneNumber,
                 veterinarian: selectedVeterinarian
             };
             // Pass booking data to parent component
-            onSelectBooking(bookingData, selectedDate); // Pass selected date
+            onSelectBooking(bookingData);
             setIsBookingSuccessful(true);
+            setBookedEvents(prevEvents => [...prevEvents, bookingData]); // Add booked event to the list
         } else {
             alert('Please fill in all fields.');
         }
@@ -91,21 +103,31 @@ const Bookings = ({ veterinarians, onSelectBooking }) => {
                     />
                     {/* Name input */}
                     <input type="text" placeholder="Your Name" value={name} onChange={handleNameChange} />
+                    <input type="tel" placeholder="Your Phone Number" value={phoneNumber} onChange={handlePhoneNumberChange} />
                     {/* Submit button */}
                     <button onClick={handleSubmit}>Book Appointment</button>
-                    {/* Display booking status */}
-                    {isBookingSuccessful && <p>Booking Successful!</p>}
+                  
+                    {/* Display booking details */}
+                    {isBookingSuccessful && (
+                        <div className="booked-events">
+                        {bookedEvents.map((event, index) => (
+                            <div key={index} className="event-card">
+                                <h3>Booking Details</h3>
+                                <p><strong>Veterinarian:</strong> {event.veterinarian ? event.veterinarian.name : ''}</p>
+                                <p><strong>Date:</strong> {event.date.toLocaleDateString()}</p>
+                                <p><strong>Time:</strong> {event.time}</p>
+                                <p><strong>Name:</strong> {event.name}</p>
+                                <p><strong>Phone:</strong> {event.phoneNumber}</p>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    )}
+                    <div className='bookingSuccessful'>
+                      {isBookingSuccessful && <p>Booking Successful!</p>}
+                   </div>
+                    
                 </>
-            )}
-            {/* Display Booking Details */}
-            {selectedVeterinarian && selectedTime && (
-                <BookingDetails
-                    veterinarian={selectedVeterinarian}
-                    date={selectedDate}
-                    time={selectedTime}
-                    name={name}
-                    isBookingSuccessful={isBookingSuccessful}
-                />
             )}
         </div>
     );
