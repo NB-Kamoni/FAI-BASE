@@ -3,19 +3,16 @@
     background-color: rgba(11, 102, 35, 1); /* Green Background */
    
 }
-
 .content-card {
-    flex: 1;
-    background-color: white;
-    margin: 20px;
-    margin-top: 1000px;
-    margin-left: 200px; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-height: 100px;
-    padding: 20px;
-    font-size: large;
-    font-style:oblique;
+        flex: 1;
+        background-color: white;
+        margin: 20px;
+        margin-top: 100px;
+        margin-left: 200px; 
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 1000px;
+        padding: 20px;
 }
 
 @media (max-width: 768px) {
@@ -30,31 +27,25 @@
         padding: 10px; 
         
     }
-}
-
-.search-input {
-    float: right;
-    margin-right: 100px; 
+    
 }
 .bookings-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 100vh;
+    justify-content: flex-start;
+    height: 50vh;
 }
-/* Services.css */
 
 .bookings-container {
     display: flex;
     flex-direction: column;
-   align-items: center;
     height: 100vh;
 }
 
 .bookings {
     width: 100%;
     max-width: 50%;
-    margin-top: 50px; 
+    margin-top: 20px; 
     padding: 20px;
     background-color: rgba(11, 102, 35, 1);
     border-radius: 10px;
@@ -69,17 +60,78 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    width: 100%;
+    width: 50%;
 }
-
 .bookings select {
     width: calc(100% - 20px);
 }
-
-.bookings p {
-    margin-top: 10px;
-    font-weight: bold;
+.bookingSuccessful {
+    margin-top: 50px;
+    text-align: center;
 }
+@keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    19% {
+        opacity: 0.45;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .bookingSuccessful p {
+    animation: flicker 1s infinite;
+  }
+.booking-card{
+margin: 20px;
+}
+
 .veterinaryData {
     margin-bottom: 20px;
+}
+.vet-search-input {
+    float: right;
+    margin-right: 100px; 
+    width: 500px;
+    height: 30px;
+}
+
+  .vet-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    flex-grow: 1;
+}
+.card-img-top {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); 
+    justify-items: center;
+    grid-gap: 10px; 
+    flex-wrap: wrap;
+    overflow-x: auto;
+    margin-top: 30px;
+   
+}
+.card-img {
+    width: 100px; 
+    height: 80px; 
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+.card-container {
+    width: 100%;
+}
+.card-vet-text {
+    font-size: medium;
+}
+.card-subtitle mb-2 text-muted {
+    font-size: medium;
 }
