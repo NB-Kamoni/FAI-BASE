@@ -44,11 +44,9 @@ function CowsList() {
   // Function to handle deleting a cow
   const handleDeleteCow = async (id) => {
     try {
-        const response = await fetch(`https://farmfolio-backend.onrender.com/cows/${id}`, {
-            method: "DELETE",
-          });
-          
-    
+      const response = await fetch(`https://farmfolio-backend.onrender.com/cows/${id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) {
         throw new Error("Failed to delete cow");
       }
