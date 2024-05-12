@@ -1,9 +1,8 @@
 import React from 'react';
 import { createMedia } from '@artsy/fresnel';
 import PropTypes from 'prop-types';
-import { Button, Container, Divider, Grid, Icon, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Button, Container, Divider, Grid, Image, List, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { InView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom'; 
 import TypingEffect from '../TypingEffect';
 
 const { MediaContextProvider, Media } = createMedia({
@@ -66,7 +65,7 @@ class DesktopContainer extends React.Component {
 
   render() {
     const { children } = this.props
-    const { fixed } = this.state
+    // const { fixed } = this.state
 
     return (
       <Media greaterThan='mobile'>
@@ -248,7 +247,7 @@ const Home = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>Case Studies</a>
+          <a href='/home'>Case Studies</a>
         </Divider>
 
         <div as='h3' style={{ fontSize: '2em' }}>

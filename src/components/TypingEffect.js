@@ -42,14 +42,14 @@ TypingEffect.propTypes = {
 };
 
 // Example usage
-const App = () => (
-  <div>
-    <TypingEffect
-      texts={["kkkk", "nnn", "kkk"]}
-      speed={100} // Speed in milliseconds
-      pause={1000} // Pause for 1 second after typing
-    />
-  </div>
-);
+// const App = () => (
+//   <div>
+//     <TypingEffect
+//       texts={["kkkk", "nnn", "kkk"]}
+//       speed={100} // Speed in milliseconds
+//       pause={1000} // Pause for 1 second after typing
+//     />
+//   </div>
+// );
 
 export default TypingEffect;

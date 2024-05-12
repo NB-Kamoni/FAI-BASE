@@ -7,7 +7,7 @@ import Bookings from './Bookings';
 
 const Dashboard = () => {
     const [veterinaries, setVeterinaries] = useState([]);
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedDate,] = useState(new Date());
     const [bookedEvents, setBookedEvents] = useState([]); // Initialize as empty array
     const { filteredData, handleSearchInputChange } = useVeterinarianSearch(veterinaries);
 
@@ -24,9 +24,9 @@ const Dashboard = () => {
             .catch(error => console.error('Error fetching data:', error));
     };
 
-    const handleDateChange = date => {
-        setSelectedDate(date);
-    };
+    // const handleDateChange = date => {
+    //     setSelectedDate(date);
+    // };
 
     // Function to handle selected booking data
     const handleSelectBooking = (data) => {
